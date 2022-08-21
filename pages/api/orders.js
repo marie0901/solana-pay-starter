@@ -4,11 +4,9 @@ import { writeFile } from "fs/promises";
 
 function get(req, res) {
   const { buyer } = req.query;
-  console.log("!!!!buyer", buyer);
 
   // Check if this address has any orders
   const buyerOrders = orders.filter((order) => {
-    console.log("!!!!order.buyer", order.buyer);
     return order.buyer === buyer;
   });
   if (buyerOrders.length === 0) {
